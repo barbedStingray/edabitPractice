@@ -282,19 +282,141 @@ console.log(highBoundFour(5));
 // 30. Create a function that takes an array of numbers and return both the minimum and maximum numbers, in that order.
 // ****
 
-let minMaxArray = [5, 9, 2, 6, 2, 4, 7];
+// let minMaxArray = [5, 9, 2, 6, 2, 4, 7];
 
-function minMaxFunction(arr){
-    let newArray = [];
-    newArray.push(Math.min(arr));
-    // newArray.push(Math.max(arr));
-    return newArray;
-}
-console.log(minMaxFunction(minMaxArray));
+// function minMaxFunction(arr){
+//     let newArray = [];
+//     newArray.push(Math.min(arr));
+//     // newArray.push(Math.max(arr));
+//     return newArray;
+// }
+// console.log(minMaxFunction(minMaxArray));
+
+// 31. Create a function that takes an array of values resistance that are connected in series, 
+// and calculates the total resistance of the circuit in ohms. 
+
+let ohmArr = [5, 2, 8, 3, 6, 1];
+let totOhm = 0;
+
+function ohmResistance(arr){
+    for(let i = 0; i < arr.length; i++){
+        totOhm += arr[i];
+    }// end for loop
+    return totOhm;
+}// end function
+console.log(ohmResistance(ohmArr));
+
+// 32. Create a function that takes an array of non-negative integers and strings and return a new array without the strings.
+
+// LESSON LEARNED
+// .splice alters your array within the loop and will have an
+// affect on the poisitions.
+
+let radArray = [3, 4, `absd`,  `gslk`, 1, `ljsd`, 3, `lje`];
+let simArray = [2, `a`, 6, `c`, `u`, 5, `r`, 9];
+
+function filterStrings(arr){
+    const numArray = [];
+    for(let num of arr){
+        if( typeof(num) === `number`){
+            numArray.push(num);
+        }// end if statement
+    }// end loop
+    return numArray;
+}// end function
+console.log(filterStrings(radArray));
+console.log(filterStrings(simArray));
+
+// 33. Create a function to count the number of 1s in a 2D array.
+// naild it
+
+//the arrays in the arrays
+let array2D = [[1, 1, 1], [0, 0, 1], [0, 0, 0]];
+
+function countfor1In2D(arr){
+    let ones = 0;
+    for(let num0 of arr){
+        for(let num1 of num0){
+            if(num1 === 1){
+                ones++;
+            }// end if statement
+        }//end secondary for loop
+    }// end primary for loop
+    return ones;
+}// end function
+console.log(countfor1In2D(array2D));
+
+
+// 34. Create a function that takes in an array of miles run every Saturday 
+// and returns Johnny's total number of progress days.
+
+let saturdayRuns = [2, 3, 4, 1, 4, 3];
+
+function progressDays(arr){
+    let moreMiles = 0;
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] < arr[i + 1]){
+            moreMiles++;
+        }//end if statement
+    }// end for statement
+    return moreMiles;
+}// end function
+console.log(progressDays(saturdayRuns));
+
+
+// 35. Given an array of arrays, return a new array of arrays containing every element, except for the outer elements.
+
+// let toPeel = [["a", "b", "c", "d"], ["e", "f", "g", "h"], ["i", "j", "k", "l"], ["m", "n", "o", "p"]];
+
+// function peelIt(arr){
+//         for(let i = 0; i < arr.length; i++){
+//             if( arr[i] === i){
+//                 arr.pop();
+//                 arr.shift();
+//             }
+//         }//first loop end
+//         return arr;
+// }// end function
+// console.log(peelIt(toPeel));
 
 
 
+// JUST JAVASCRIPT LEARNING
+
+// console.log({});
+// console.log([]);
+// console.log((x => x * 2));
+
+// console.log(typeof([])); // "object"
+// console.log(typeof(new Date())); // "object"
+// console.log(typeof(/(hello|goodbye)/)); // "object"
+
+// console.log(typeof(2)); // "number"
+// console.log(typeof("hello")); // "string"
+// console.log(typeof(undefined)); // "undefined"
+
+// console.log(typeof{}); // "object"
+// console.log(typeof[]); // "object"
+// console.log(typeof (x => x * 2)); // "function"
 
 
 
+// console.log(typeof(newArray));
 
+// console.log(typeof(undefined));
+// console.log(typeof(null)); //returns object
+// console.log(typeof(true));
+
+// console.log(typeof(typeof([]))); // object
+
+// let reaction = `yikes`;
+// reaction[0] = `l`;
+// console.log(reaction); // yikes
+// // this is because strings are primitive and
+// // cannot be changed
+
+// let pet = 'Narwhal';
+// pet = `the kraken`;
+// console.log(pet);
+
+// JUST JAVASCRIPT END
