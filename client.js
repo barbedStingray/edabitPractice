@@ -380,6 +380,61 @@ console.log(progressDays(saturdayRuns));
 // console.log(peelIt(toPeel));
 
 
+// // 36. Create a function that returns an array of strings sorted by length in ascending order.
+
+// let arrSort = [`bb`, `ccc`, `dddd`, `a`];
+
+// function sortByLength(arr){
+//     arr.sort();
+//     return arr;
+// }
+// sortByLength(arrSort);
+
+// 37. Create a function that takes in an array of names and returns the name of the secret society.
+// the secret society name is defined by the first letter of each name.
+
+let secretMembers = [`ben`, `becky`, `olivia`, `emilee`, `amanda`];
+
+function secretSociety(arr){
+    let societyName = [];
+    for(let i=0; i < arr.length; i++){
+        societyName.push(arr[i][0]);
+    }// end loop
+    return societyName.join(societyName);
+}// end function
+console.log(secretSociety(secretMembers));
+
+// 38. Write two functions:
+// toArray(), which converts a number to an array of its digits.
+// toNumber(), which converts an array of digits back to its number.
+
+let numToArray = 3855;
+let arrayToNum = [2, 5, 7, 3];
+
+function toNumber(arr){
+    arr.toString(arr);
+    return arr;
+}
+console.log(toNumber(arrayToNum));
+
+// FREE CODE CAMP INTERVIEW PREP
+// There are 100 doors in a row that are all initially closed. You make 100 passes by the doors. The first time through, 
+// visit every door and 'toggle' the door (if the door is closed, open it; if it is open, close it). 
+// The second time, only visit every 2nd door (i.e., door #2, #4, #6, ...) and toggle it. 
+// The third time, visit every 3rd door (i.e., door #3, #6, #9, ...), etc., until you only visit the 100th door.
+// Implement a function to determine the state of the doors after the last pass. 
+// Return the final result in an array, with only the door number included in the array if it is open.
+
+// lets make open door = true
+
+const doors = new Array(100).fill(false);
+
+const newDoors = doors.map((door, index) => index +1);
+
+console.log(newDoors);
+
+
+
 
 // JUST JAVASCRIPT LEARNING
 
