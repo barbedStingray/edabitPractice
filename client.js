@@ -433,8 +433,93 @@ const newDoors = doors.map((door, index) => index +1);
 
 console.log(newDoors);
 
+// 39. Create a function that returns true if a string is empty and false otherwise.
+//isEmpty("") ➞ true
+//isEmpty(" ") ➞ false
 
+function isEmpty(string){
+    if(string.length >= 1){
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+console.log(isEmpty(``));
 
+// 40. Create a function that takes a string and returns it as an integer.
+
+function makeInteger(val){
+    console.log(`in makeInteger`);
+    return Number(val);
+}
+console.log(makeInteger(`366`));
+
+// 41. Given a string, return true if its length is even or false if the length is odd.
+
+function stringOdd(str){
+    if(str.length % 2 === 0){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+// 42. Swap the values of a and b
+
+let a = 100;
+let b = 200;
+
+function swap(a, b) {
+	const val = a;
+	a = b
+	b = val
+	return [a, b]
+}
+console.log(swap(a, b));
+
+// 43. Create a function that takes a word and returns the new word 
+// without including the first character.
+
+function removeFirstLetter(str){
+    return str.substring(1);
+    // string.substring(x) subtracts x positions from the beginning of the string
+}
+console.log(removeFirstLetter(`banana`));
+
+// 44. Create a function that takes an array and a string as arguments and 
+// returns the index of the string.
+
+let fruits = ["Pineapple", "Orange", "Mango", "Coconut", "Guava"];
+
+function indexOf(arr, x){
+    // arr.indexOf(x) -- outputs the position of x within array
+    return arr.indexOf(x);
+}
+console.log(indexOf(fruits, `Mango`));
+
+// 45. Create a function that takes a string (a random name). If the last character of the 
+// name is an "n", return true, otherwise return false.
+
+function checkForLetter(str, letter){
+    if(str[str.length - 1] === letter){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+console.log(checkForLetter(`ben`, `f`));
+
+// 46. Create a function that takes a string txt and a number n and returns 
+// the repeated string n number of times.
+
+function repeatedString(str, num){
+    // string or variable.repeat(num) will repeat that str/var the number of times
+    return str.repeat(num);
+}
+console.log(repeatedString(`ben`, 5));
 
 // JUST JAVASCRIPT LEARNING
 
