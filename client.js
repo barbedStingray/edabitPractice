@@ -519,7 +519,267 @@ function repeatedString(str, num){
     // string or variable.repeat(num) will repeat that str/var the number of times
     return str.repeat(num);
 }
-console.log(repeatedString(`ben`, 5));
+console.log(repeatedString(`ben`, 4));
+
+//47. Luke Skywalker has family and friends. Help him remind them who is who. Given a string with a name, 
+// return the relation of that person to Luke.
+
+let familyMembers = [
+    {
+    name: `Leia`,
+    relation: `Sister`,
+    },
+    {
+    name: `Han`,
+    relation: `Brother in Law`,
+    },
+    {
+    name: `R2-D2`,
+    relation: `Droid`,
+    },
+    {
+    name: `C3PO`,
+    relation: `Interpreter`,
+    },
+    {
+    name: `Darth Vader`,
+    relation: `Father`,
+    },
+];
+
+function familyRelation(arr, str){
+    for(let person of arr){
+        if(person.name === str){
+            console.log(`Luke, I am your ${person.relation}`);
+        }// end if statement
+    }// end for loop
+}// end function
+familyRelation(familyMembers, `Darth Vader`);
+familyRelation(familyMembers, `R2-D2`);
+familyRelation(familyMembers, `Han`);
+
+// 48. Create a function that takes an object as an argument and returns a string with facts about the city. 
+// The city facts will need to be extracted from the object's three properties: name, population, continent
+
+let worldCities = [
+    {
+        name: `USA`,
+        population: 3022,
+        continent: `North America`
+    },
+    {
+        name: `New Zealand`,
+        population: 841,
+        continent: `Pacific`
+    },
+    {
+        name: `Canada`,
+        population: 1282,
+        continent: `North America`
+    },
+    {
+        name: `Morocco`,
+        population: 5028,
+        continent: `Africa`
+    },
+    {
+        name: `Indonesia`,
+        population: 2391,
+        continent: `Indo-Pacific`
+    },
+    {
+        name: `Greece`,
+        population: 4920,
+        continent: `Europe`
+    },
+];
+
+let array = [1, 3, 5, 2, 4];
+console.log(Math.max(...array));
+
+//Math.max function returns the largest number. add ...arrayName when sorting an array.
+
+function cityFacts(arr){
+    let popArray = [];
+    
+    for(let city of arr){
+        console.log(`City: ${city.name}, Population: ${city.population}, Location: ${city.continent}`);
+    }// end loop
+    // find and name highest population
+    for(let city of arr){
+        console.log(`adding ${city.name} population numbers`);
+        popArray.push(city.population);
+    }// end population loop
+    Math.max(...popArray);
+    for(let city of arr){
+        if(Math.max(...popArray) === city.population){
+            console.log(`The largest population is in ${city.name} with ${Math.max(...popArray)} people.`);
+        }// end largest population statement
+    }// end loop
+}// end function
+cityFacts(worldCities);
+
+// 49. (Burglary Series 1)You just returned home to find your mansion has been robbed! Given an object of the stolen items, return the total 
+// amount of the burglary (number). If nothing was robbed, return the string "Lucky you!".
+
+
+// *********** burglary series objects stolen
+let itemsStolen = [
+    {
+        name: `ps5`,
+        cost: 500,
+        type: `tech`
+    },
+    {
+        name: `tv`,
+        cost: 1050,
+        type: `tech`
+    },
+    {
+        name: `models`,
+        cost: 300,
+        type: `hobby`
+    },
+    {
+        name: `carpet`,
+        cost: 50,
+        type: `furniture`
+    },
+    {
+        name: `couch`,
+        cost: 800,
+        type: `furniture`
+    },
+    {
+        name: `ukulele`,
+        cost: 250,
+        type: `hobby`
+    },
+    {
+        name: `ring`,
+        cost: 3100,
+        type: `one of a kind`
+    },
+    {
+        name: `rascal`,
+        cost: 1400,
+        type: `pet`
+    },
+    {
+        name: `alaska`,
+        cost: 105,
+        type: `travelGlass`
+    },
+    {
+        name: `blue springs`,
+        cost: 80,
+        type: `travelGlass`
+    },
+];
+// *********** burglary series objects stolen
+
+
+function returnTotalLosses(arr){
+    let totalLosses = 0;
+    for(let item of arr){
+        console.log(`adding ${item.name} with a price of ${item.cost}`);
+        totalLosses += item.cost;
+    }
+    return totalLosses;
+}
+console.log(returnTotalLosses(itemsStolen));
+
+// 50. (Burglary Series 2) You call your spouse to inform his/her most precious item is gone! 
+// return the most expensive item on the list.
+
+function mostValuableItem(arr){
+    let priceList = [];
+    for(let item of arr){
+        priceList.push(item.cost);
+        console.log(`${item.cost} pushed to priceList`);
+    }// end loop
+    console.log(priceList);
+    console.log(Math.max(...priceList));
+    let valuableItem = Math.max(...priceList);
+
+    for(let item of arr){
+        if(valuableItem === item.cost){
+            console.log(`The item ${item.name} was worth ${item.cost}`);
+            return valuableItem;
+        }
+    }
+}
+mostValuableItem(itemsStolen);
+
+// 51. (Burglary Series 3) Your spouse is not concerned with the loss of material possessions 
+// but rather with his/her favorite pet. Is it gone?!
+
+function petNapping(arr){
+    let petnapped = false;
+    for(let item of arr){
+        if(item.name === `rascal`){
+            petnapped = true;
+        }// end true
+    }// end for loop
+        if(petnapped === true){
+            console.log(`They took the pet, too!`);
+        }
+        else if( petnapped === false){
+            console.log(`Nope, the pet is safe!`);
+        }
+}// end function
+petNapping(itemsStolen);
+
+// 52. (Burglary Series 4) Did they take any of our Travel Glasses? Which one? what was it worth?
+
+function searchTravelGlass(arr, search){
+    let stolenTravelGlass = [];
+    let totalGlasses = 0;
+    for(let item of arr){
+        if(item.type === search){
+            console.log(`the travel glass ${item.name} was taken for ${item.cost}!`);
+            stolenTravelGlass.push(item);
+            totalGlasses += item.cost;
+        }// end if statement
+    }
+    console.log(stolenTravelGlass);
+    console.log(`they took ${totalGlasses} from our travel glasses!`);
+
+}
+searchTravelGlass(itemsStolen, `travelGlass`);
+
+// 53. (Burglary Series 5) What was the third most expensive item that was stolen?
+// .sort method. array.sort() returns values in 
+// .reverse method. array.reverse() will return your array in opposite order
+function thirdMostExpensive(arr){
+    let arrayToSort = [];
+    let thirdMost;
+    for(let item of arr){
+        arrayToSort.push(item.cost);
+        console.log(`item ${item.name} cost was pushed`);
+    }
+    console.log(arrayToSort);
+    arrayToSort.sort(function(a, b){return b-a});
+    console.log(arrayToSort);
+    thirdMost = arrayToSort[2];
+    console.log(thirdMost);
+    for(let item of arr){
+        if(item.cost === thirdMost){
+            console.log(`the item ${item.name} is the third most expensive at ${item.cost}`);
+        }
+    }
+}
+thirdMostExpensive(itemsStolen);
+
+// it would pay to understand this code later
+
+const points = [40, 100, 1, 5, 25, 10];
+console.log(points.sort(function(a, b){return b-a}));
+
+// ********************************
+
+
+
 
 // JUST JAVASCRIPT LEARNING
 
