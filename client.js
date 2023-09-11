@@ -771,12 +771,75 @@ function thirdMostExpensive(arr){
 }
 thirdMostExpensive(itemsStolen);
 
+
+
 // it would pay to understand this code later
 
-const points = [40, 100, 1, 5, 25, 10];
-console.log(points.sort(function(a, b){return b-a}));
+// const points = [40, 100, 1, 5, 25, 10];
+// console.log(points.sort(function(a, b){return b-a}));
 
 // ********************************
+
+
+// 54. (Burglary Series 6) convert a string to a number
+
+
+
+// 55. (Burglary Series 7) Make a copy of your stolen list
+
+// object assign property Object.assign(your target, source to be copied)
+let copyItemsStolen = Object.assign([], itemsStolen);
+console.log(copyItemsStolen);
+
+//56. (Burglary Series 8) Your spouse tells you that one of the items on the list wasn't stolen, 
+// it is in your castle in Transilvania.
+// your ukulele was not stolen. take it off the list.
+
+// function removeStolenItem(arr, obj){
+//     for(let i=0; i<arr.length; i++){
+//         console.log(`looking for ${obj} on list`);
+//         console.log(i.name);
+
+//         if(i.name === `ukulele`){
+//             console.log(`you have spliced ${i.name}`);
+//             console.log(arr[i]);
+//             arr.splice(arr[i], 1);
+//         }// end splice if
+//     }// end for loop
+// }// end function removeStolenItem
+// removeStolenItem(itemsStolen, `ukulele`);
+// console.log(itemsStolen);
+
+//57. (Burglary Series 9) The insurance guy calls, the policy you chose doesn't cover values below 700
+// return a list with values below 700.
+
+function insuranceCoverage(arr, insured){
+    let notCovered = [];
+    let totalValue = 0;
+    for(let item of arr){
+        console.log(`looking for insured items`);
+        if(item.cost < insured){
+            console.log(`item ${item.name} is not insured for ${item.cost}`);
+            notCovered.push(item);
+            totalValue += item.cost;
+        }
+    }
+    console.log(notCovered);
+    return totalValue;
+}
+
+console.log(insuranceCoverage(itemsStolen, 700)); 
+
+//58. (Burglary Series 10) The insurance guy calls again and apologizes. They found another policy made by your spouse, 
+// but this one is limited to cover a particular maximum in losses (5000). You send a bill to your 
+// spouse for the difference you lost.
+
+// you can run a function as a variable.
+function differenceOfInsurance(arr, policyMax){
+    return policyMax - returnTotalLosses(arr);
+}
+console.log(differenceOfInsurance(itemsStolen, 5000));
+
 
 
 
