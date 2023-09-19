@@ -155,7 +155,7 @@ function legsOfFarmAnimals(cows, pigs, chickens){
 // let forbiddenArray1 = [`goose`, `duck`, `pheasant`, `robin`];
 // let forbiddenArray2 = [`whale`, `dolphin`, `shark`, `stingray`];
 
-// function forbiddenLetter(letter, arr){
+// function forbiddenLetter(arr, letter){
     
 // }
 
@@ -417,21 +417,32 @@ function toNumber(arr){
 }
 console.log(toNumber(arrayToNum));
 
-// FREE CODE CAMP INTERVIEW PREP
-// There are 100 doors in a row that are all initially closed. You make 100 passes by the doors. The first time through, 
-// visit every door and 'toggle' the door (if the door is closed, open it; if it is open, close it). 
-// The second time, only visit every 2nd door (i.e., door #2, #4, #6, ...) and toggle it. 
-// The third time, visit every 3rd door (i.e., door #3, #6, #9, ...), etc., until you only visit the 100th door.
-// Implement a function to determine the state of the doors after the last pass. 
-// Return the final result in an array, with only the door number included in the array if it is open.
+
+
+
+
 
 // lets make open door = true
 
-const doors = new Array(100).fill(false);
+// const doors = new Array(100).fill(false);
 
-const newDoors = doors.map((door, index) => index +1);
+// const newDoors = doors.map((door, index) => index +1);
 
-console.log(newDoors);
+// console.log(newDoors);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 39. Create a function that returns true if a string is empty and false otherwise.
 //isEmpty("") ➞ true
@@ -840,6 +851,32 @@ function differenceOfInsurance(arr, policyMax){
 }
 console.log(differenceOfInsurance(itemsStolen, 5000));
 
+//59. (Burglary Series 11)
+
+// Given an object, return a string that concatenates all the values and adds the 2nd key at the end. 
+// Make sure you keep an empty space between them but not at the beginning or end of the string. 
+// Look at the examples for a clearer picture.
+
+let mumbledObject = {
+    word1: `help`,
+    word2: `please`,
+    word3: `woot woot`
+}
+
+function mumbledWords (obj){
+    console.log(`${obj.word1}, ${obj.word2} ${obj.word3}`)
+}
+mumbledWords(mumbledObject);
+
+
+// 60. Return all the numbers in an array that are NOT divisible by 13
+
+let unluckyArray = [53, 182, 435, 591, 637];
+
+let array1 = [1, 4, 9, 16];
+
+let arrayDouble = array1.map((x) => x + 2);
+console.log(arrayDouble);
 
 
 
@@ -883,3 +920,31 @@ console.log(differenceOfInsurance(itemsStolen, 5000));
 // console.log(pet);
 
 // JUST JAVASCRIPT END
+
+
+
+
+// FREE CODE CAMP INTERVIEW PREP
+// There are 100 doors in a row that are all initially closed. You make 100 passes by the doors. The first time through, 
+// visit every door and 'toggle' the door (if the door is closed, open it; if it is open, close it). 
+// The second time, only visit every 2nd door (i.e., door #2, #4, #6, ...) and toggle it. 
+// The third time, visit every 3rd door (i.e., door #3, #6, #9, ...), etc., until you only visit the 100th door.
+// Implement a function to determine the state of the doors after the last pass. 
+// Return the final result in an array, with only the door number included in the array if it is open.
+
+
+// function openDoors(hallway){
+//     // Pass through the hallway
+//     for (let i=0; i< 100; i++){
+//         // Status of each door
+//         for (let door= i; door < 100; door + i){
+//             if (hallway[door] == false) {
+//                 hallway[door] = true;
+//             } else {
+//                 hallway[door] = false;
+//             }
+//         }
+//     } return hallway
+// }
+
+// console.log(openDoors(hallway));
