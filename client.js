@@ -878,8 +878,85 @@ let array1 = [1, 4, 9, 16];
 let arrayDouble = array1.map((x) => x + 2);
 console.log(arrayDouble);
 
+// 61. create a function to concatenate two integer arrays
 
+let arrayCatOdd = [1, 3, 5];
+let arrayCatEven = [2, 4, 6];
 
+function concatenatingNumberArrays(arr1, arr2) {
+    return arr1.concat(arr2);
+}
+console.log(concatenatingNumberArrays(arrayCatEven, arrayCatOdd));
+
+// 62. return the sum of each persons budget
+
+let friendsArray = [
+    { name: "Ben", age: 21, budget: 7600 },
+    { name: "Nick",  age: 32, budget: 7100 },
+    { name: "Joe",  age: 16, budget: 5 },
+    { name: "Mike",  age: 16, budget: 9000 }
+  ]
+
+  function budgetCalculator(array){
+    let budgetTotal = 0;
+    for(let person of array){
+        budgetTotal += person.budget;
+    }
+    return budgetTotal;
+  }
+
+  console.log(budgetCalculator(friendsArray));
+
+  // 63. score your name
+
+  const scores = {"A": 100, "B": 14, "C": 9, "D": 28, "E": 145, "F": 12, "G": 3,
+"H": 10, "I": 200, "J": 100, "K": 114, "L": 100, "M": 25,
+"N": 450, "O": 80, "P": 2, "Q": 12, "R": 400, "S": 113,
+"T": 405, "U": 11, "V": 10, "W": 10, "X": 3, "Y": 210, "Z": 23}
+
+function nameScore(anyName){
+    let splitName = anyName.split('');
+    console.log(`i have split the name`);
+    console.log(splitName);
+}
+
+nameScore(`benjamin`);
+
+function scoreName(name) {
+    let score = 0;
+    for(let i = 0; i < name.length; i++){
+        if (name[i] in scores) {
+            score += scores[name[i]];
+        }
+    }
+    return score
+}
+console.log(scoreName(`ben`));
+
+// 64. war of numbers
+// sum the even and odd numbers seperately, larger group wins
+
+let warOfNumbers = [5, 9, 45, 6, 2, 7, 34, 8, 6, 90, 5];
+
+function warOfEvenOdd(array){
+    let even = 0;
+    let odd = 0;
+    for(let numb of array){
+        if(numb % 2 === 0){
+            even += numb;
+        }// addition
+        else {
+            odd += numb;
+        }
+    }// summing even/odo numbers 
+    if(even > odd){
+        return even;
+    } 
+    else {
+        return odd;
+    }
+}
+console.log(warOfEvenOdd(warOfNumbers));
 
 // JUST JAVASCRIPT LEARNING
 

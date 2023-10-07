@@ -1,3 +1,76 @@
 h1 {
     background-color: lightblue;
 }
+
+/* body {
+    display: flex;
+
+} */
+
+#big-picture {
+    outline: black 2px solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    /* gap: 10px; */
+    /* flex-wrap: wrap; */
+
+    height: 500px;
+    width: 1200px;
+
+}
+
+#box-box {
+    display: flex;
+}
+
+p {
+    background-color: darkgrey;
+}
+
+.square {
+    outline: 1px black solid;
+}
+
+
+.red {
+    background-color: darkred;
+    /* align-self: flex-end; */
+    /* flex-grow: 4; */
+    flex-basis: 250px;
+    flex-grow: 1;
+
+
+}
+.blue {
+    background-color: darkblue;
+    /* align-self: center; */
+    /* flex-grow: 2; */
+    flex-basis: 250px;
+    /* flex-shrink: 2; */
+    flex-grow: 17;
+
+
+}
+.green {
+    background-color: darkgreen;
+    /* align-self: stretch; */
+    /* flex-grow: 5; */
+    flex-basis: 250px;
+    /* flex-shrink: 7; */
+    flex-grow: 1;
+
+
+}
+.yellow {
+    background-color: darkgoldenrod;
+    /* align-self: flex-end; */
+    /* flex-grow: 3; */
+    flex-basis: 250px;
+    flex-grow: 2;
+    /* flex-shrink: 3; */
+
+
+}
+
