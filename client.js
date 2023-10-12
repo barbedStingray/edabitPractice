@@ -958,6 +958,41 @@ function warOfEvenOdd(array){
 }
 console.log(warOfEvenOdd(warOfNumbers));
 
+// 65. concat any number of arrays
+
+let arrayOne = [1, 2, 3];
+let arrayTwo = [4, 5];
+let arrayThree = [6, 7];
+
+function multipleArrays(arr0, arr1, arr2, arr3, arr4, arr5){
+    let bigArray = arr0.concat(...arr1, ...arr2);
+    return bigArray;
+}
+console.log(multipleArrays(arrayOne, arrayTwo, arrayThree));
+
+
+
+
+
+const object1 = {
+    a: 'ben',
+    b: 32,
+    c: 'rehmann'
+  };
+  
+console.log(Object.entries(object1));
+console.log(multipleArrays(
+    Object.entries(object1)[0], 
+    Object.entries(object1)[1], 
+    Object.entries(object1)[2]));
+
+    
+
+
+//   for (const [key, value] of Object.entries(object1)) {
+//     console.log(`${key}: ${value}`);
+//   }
+
 // JUST JAVASCRIPT LEARNING
 
 // console.log({});
