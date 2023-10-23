@@ -986,6 +986,19 @@ console.log(multipleArrays(
     Object.entries(object1)[1], 
     Object.entries(object1)[2]));
 
+
+// 66. return a string with spaces
+
+let theString = `benisthebest`;
+
+function stringSpace(val) {
+    let stringSplit = val.split('');
+    let stringJoin = stringSplit.join(' ');
+
+    return stringJoin;
+}
+console.log(stringSpace(theString));
+
     
 
 
