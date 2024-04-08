@@ -1000,7 +1000,47 @@ function stringSpace(val) {
 console.log(stringSpace(theString));
 
     
+const groceries = [
+{ product: "Milk", quantity: 1, price: 1.50 },
+{ product: "Eggs", quantity: 12, price: 0.10 },
+{ product: "Bread", quantity: 2, price: 1.60 },
+{ product: "Cheese", quantity: 1, price: 4.50 }
+];
 
+function groceryCost(array) {
+    let totalCost = 0;
+    for (let i = 0; i < array.length; i++) {
+        console.log('price item', array[i].price);
+        totalCost += array[i].price;
+    }
+    return totalCost;
+}
+
+console.log('totalCost', groceryCost(groceries));
+
+// find the boomerangs
+const boomArray = [9, 5, 9, 5, 1];
+
+function boomFinder(array) {
+    console.log('in boomfinder', array);
+    let boomCount = 0;
+
+    for (let i = 0; i < array.length; i++) {
+        console.log('i', i);
+        if (boomArray[i - 1] === boomArray[i + 1] && boomArray[i] !== boomArray[i + 1]) {
+            boomCount += 1;
+        }
+    }
+    return boomCount;
+}
+
+console.log('totalBooms', boomFinder(boomArray));
+
+let boomMap = boomArray.map((element) => {
+    return element * 3;
+})
+
+console.log(boomMap);
 
 //   for (const [key, value] of Object.entries(object1)) {
 //     console.log(`${key}: ${value}`);
